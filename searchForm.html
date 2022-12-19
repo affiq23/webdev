@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit search form</title>
+</head>
+
+<body>
+    <h1>Reddit search form</h1>
+    <form action="https://www.reddit.com/search/">
+        <div>
+            <label id="searchReddit">Search here:</label>
+            <input id="searchReddit" type="text" name="q">
+        </div>
+        <br>
+        <div>
+            <button>Search Reddit</button>
+        </div>
+    </form>
+
+    <h1>Google search form</h1>
+    <form action="https://www.google.com/search">
+        <div>
+            <label id="searchGoogle">Search here:</label>
+            <input id="searchGoogle" type="text" name="q">
+        </div>
+        <br>
+        <div>
+            <button>Search Google</button>
+        </div>
+    </form>
+    <br>
+
+    <form action="/nowhere">
+        <div>
+            <label for="small">Small:</label>
+            <input type="radio" name="shirtSize" id="small" value="small">
+            <label for="medium"><label>Medium:</label>
+                <input type="radio" name="shirtSize" id="medium">
+                <label for="large">Large:</label>
+                <input type="radio" name="shirtSize" id="large">
+                <button>Submit</button>
+        </div>
+    </form>
+
+
+</body>
+
+</html>
