@@ -21,9 +21,8 @@ while(condition !== "quit"){
      else if(condition == "delete"){
         let index = prompt("Enter index of list entry you want to delete.");
         let deletedVal = todo.splice(index, 1);
-        console.log(`Deleted ${deletedVal}`)
-        
-        
+        console.log(`Deleted ${deletedVal}`);
+        console.log("********"); 
     }
     condition = prompt("What would you like to do?");
 }
