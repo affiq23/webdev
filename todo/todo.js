@@ -1,5 +1,4 @@
 let todo = [];
-let val = true;
 
 function ifItemIsNew(){
     let newTodo = prompt(console.log("What would you like to add?"));
