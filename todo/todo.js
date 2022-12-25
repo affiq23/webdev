@@ -1,29 +1,44 @@
 let todo = [];
 let val = true;
-let condition = prompt("What would you like to do?");
 
+function ifItemIsNew(){
+    let newTodo = prompt(console.log("What would you like to add?"));
+    todo.push(newTodo);
+    console.log(`Added ${newTodo} to list.`)
+    console.log("--------------------------------------");
+}
+
+function showList(){
+    for(let i  = 0; i < todo.length; i++){
+        console.log(`${i} ${todo[i]}`);
+    }
+    console.log("--------------------------------------");
+}
+
+function deleteItem(){
+    let indexItem = prompt("Enter the index of the entry you want to delete.");
+    let val = todo.splice(indexItem, 1);
+    console.log(`Deleted "${val}" from list`);
+    console.log("--------------------------------------");
+}
+
+let condition = prompt("What would you like to do?");
 while(condition !== "quit"){
 
-     if (condition === "list") {
-        for (let i = 0; i < todo.length; i++) {
-            console.log(i + " " + todo[i]);
-        }
-        console.log("********");
+    if(condition === "new"){
+        ifItemIsNew();
     }
 
-    else if (condition === "new") {
-        let newTodo = prompt("Enter new to do");
-        todo.push(newTodo);
-        console.log(`${newTodo} added to list`);
-        console.log("********");
-    } 
-
-     else if(condition == "delete"){
-        let index = prompt("Enter index of list entry you want to delete.");
-        let deletedVal = todo.splice(index, 1);
-        console.log(`Deleted ${deletedVal}`);
-        console.log("********"); 
+    if(condition === "list"){
+        showList();
     }
+
+
+    if(condition === "delete"){
+        deleteItem();
+    }
+   
     condition = prompt("What would you like to do?");
 }
 console.log("You quit the app");
+
