@@ -9,9 +9,9 @@ function forEach(){
 //map function
 function mapFunc(){
     const fullNames = [{first: 'Albus', last: 'Dumbledore'}, {first: 'Harry', last: 'Potter'}, {first: 'Hermione', last: 'Granger'}, {first: 'Ron', last: 'Weasley'}, {first: 'Rubeus', last: 'Hagrid'}, {first: 'Minerva', last: 'McGonagall'}, {first: 'Severus', last: 'Snape'}];
-    let firstNames = fullNames.map = (name) => { //updated with arrow function
+    let firstNames = fullNames.map((name) =>{ //updated with arrow function
      return name.first;
-    };
+    });
     console.log(firstNames);
 }
 forEach();
@@ -21,8 +21,8 @@ mapFunc();
     greet("Hagrid") //"Hey Hagrid!" 
     greet("Luna") //"Hey Luna!"*/
 
-    const greet = (name) => {
-        return `Hey ${name}!`;
+    const greet = (myName) => {
+        return `Hey ${myName}!`;
     }
 
 //setTimeout -- waits specified seconds to run code
