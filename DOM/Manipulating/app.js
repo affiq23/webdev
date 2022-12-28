@@ -1,12 +1,9 @@
-const allLinks = document.querySelectorAll('a');
 
-// for (let link of allLinks) {
-//     link.innerText = 'I AM A LINK!!!!'
-// }
+// const images = document.getElementsByClassName("square");
+// for(let img of images){
+//     img.src = "https://upload.wikimedia.org/wikipedia/en/3/33/Silicon_valley_title.png";
+// } 
+//changes all square images to Silicon Valley picture
 
 
-for (let link of allLinks) {
-    link.style.color = 'rgb(0, 108, 134)';
-    link.style.textDecorationColor = 'magenta';
-    link.style.textDecorationStyle = 'wavy'
-}
+
