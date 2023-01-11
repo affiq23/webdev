@@ -109,6 +109,6 @@ const getUserFriendshipStats = async (username) => {
 };
 
 // Replace 'example_username' following with your instagram username
-const username = "example_username";
+const username = "affiqm23";
 
 getUserFriendshipStats(username).then(console.log);
