@@ -1,3 +1,4 @@
+// Use on chrome
 const fetchOptions = {
   credentials: "include",
   headers: {
@@ -109,6 +110,6 @@ const getUserFriendshipStats = async (username) => {
 };
 
 // Replace 'example_username' following with your instagram username
-const username = "affiqm23";
+const username = "sanilmathew03";
 
 getUserFriendshipStats(username).then(console.log);
