@@ -34,3 +34,4 @@ window.addEventListener("keydown", function (evt) { //doesn't need to just be in
             break;
     }
 })
+//checking to see status is good
