@@ -11,8 +11,8 @@ input.addEventListener("keydown", function (evt) {
     console.log(evt.code); //actual location of key on keyboard
 })
 /*input.addEventListener("keyup", function(evt){
-    console.log("KEYUP")
-    console.log(evt)
+    console.log("KEYUP");
+    console.log(evt);
 })*/
 
 window.addEventListener("keydown", function (evt) { //doesn't need to just be in input box
