@@ -19,7 +19,6 @@ p1Button.addEventListener("click", function(){
             p2Display.classList.add("has-text-danger");
             p1Button.disabled = true;
             p2Button.disabled = true;
-
         }
         p1Display.textContent = p1Score;
     }
