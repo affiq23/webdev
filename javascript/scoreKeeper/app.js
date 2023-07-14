@@ -42,7 +42,6 @@ playToSelect.addEventListener("change", function(){
    // alert(this.value); gives the number we are currently on in the selector
    winScore = parseInt(this.value);
    reset();
-
 });
 
 resetButton.addEventListener("click", reset);
