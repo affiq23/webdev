@@ -83,7 +83,7 @@ fakeRequestPromise('yelp.com/api/coffee/page1')
     .then((data) => {
         console.log("IT WORKED!!!!!! (page1)")
         console.log(data)
-        return fakeRequestPromise('yelp.com/api/coffee/page2')
+        return fakeRequestPromise('yelp.com/api/coffee/page2') //this returns an object
     })
     .then((data) => {
         console.log("IT WORKED!!!!!! (page2)")
