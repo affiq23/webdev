@@ -1,3 +1,6 @@
+//DISCLAIMER: NOT MY CODE; FOUND ON GOOGLE AND I EDITED 
+
+
 // Use on chrome
 const fetchOptions = {
   credentials: "include",
