@@ -9,7 +9,7 @@ const port = 3000;
 
 // response is object made by Express
 app.get("/", (req, res) => {
-    res.send("This is the home page.");
+    res.send("This is the home page which can update.");
 });
 
 app.get("/r/:subreddit/:postID", (req, res) => { //colon indicates a variable
@@ -31,10 +31,16 @@ app.get("/dogs", (req, res) => {
     res.send("WOOF!");
 });
 
+app.get("/search", (req, res) => {
+    const { q } = req.query; //error when not using q for some reason
+    console.log(req.query)
+    res.send(`<h1>Results for: ${q} </h1>`);
+});
 
 app.get("*", (req, res) => { //star means everything, has to be at the end
     res.send("Not sure what you're looking for...");
 });
+
 
 
 app.listen(port, () => { //connecting to port
