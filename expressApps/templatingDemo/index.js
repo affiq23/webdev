@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const path = require("path");
+const redditData = require("./data.json");
+
+app.use(express.static(path.join(__dirname, "public"))); //making it an absolute path
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views")); //taking current directory where index.js is and appending views to it
@@ -12,7 +16,14 @@ app.get("/", (req, res) => {
 
 app.get("/r/:subreddit", (req, res) => {
     const { subreddit } = req.params;
-    res.render("subreddit", { subreddit }); //object
+    const data = redditData[subreddit];
+    if(data){
+        //spreading object; allows you to access individual properties
+    res.render("subreddit", { ...data }); //object
+    }
+    else {
+        res.render("notfound", { subreddit })
+    }
 
 })
 
