@@ -12,7 +12,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 
-const comments = [
+let comments = [
     {
         id: uuid(),
         username: "Todd",
@@ -77,6 +77,13 @@ app.patch("/comments/:id", (req, res) => {
     foundComment.comment = newCommentText; //update comment property
     res.redirect("/comments");
 })
+
+app.delete("/comments/:id", (req, res) => {
+    const id = req.params.id;
+    //c.id is the comment that the array is iterating through; id by itself is the id in the path
+    comments = comments.filter(c => c.id !== id); //for that comment, that id is not equal to the id in the route; returns a new array
+    res.redirect("/comments");
+});
 
 
 //IGNORE ALL THIS
