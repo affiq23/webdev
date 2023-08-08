@@ -55,6 +55,28 @@ app.get("/comments/:id", (req, res) => {
     res.render("comments/show", { comment })
 })
 
+app.get("/comments/:id", (req, res) => {
+    const { id }  = req.params;
+    const comment = comments.find(c => c.id === id); //to find the id in the comment
+    res.render("comments/show", { comment })
+})
+
+app.get("/comments/:id/edit", (req, res) => {
+    const { id }  = req.params;
+    const comment = comments.find(c => c.id === id);
+    res.render("comments/edit", { comment });
+})
+
+//PATCH REQUEST: updating something to an existing resouce
+app.patch("/comments/:id", (req, res) => {
+    const id = req.params.id; //taking id from the URL
+    const newCommentText = req.body.comment; //whatever was sent in the payload
+    const foundComment = comments.find(c => c.id === id); //looking for original comment with id
+    foundComment.comment = newCommentText; //update comment property
+    res.redirect("/comments");
+})
+
+
 //IGNORE ALL THIS
 app.get("/tacos", (req, res) => {
     res.send("GET /tacos");
