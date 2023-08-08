@@ -7,7 +7,7 @@ uuid();
 
 app.use(express.urlencoded({ extended: true })); //parses incoming requests with URL encoded payloads
 app.use(express.json()); //parses incoming requests with JSON payloads
-app.use(methodOverride("_method"));
+app.use(methodOverride("_method")); //have to use in order to send DELETE and PATCH requests
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -85,16 +85,6 @@ app.delete("/comments/:id", (req, res) => {
     res.redirect("/comments");
 });
 
-
-//IGNORE ALL THIS
-app.get("/tacos", (req, res) => {
-    res.send("GET /tacos");
-});
-
-app.post("/tacos", (req, res) => {
-    const { meat, qty } = req.body;
-    res.send(`Here are your ${qty} ${meat} tacos!`);
-})
 
 app.listen(3000, () => {
     console.log("Listening on port 3000...");
