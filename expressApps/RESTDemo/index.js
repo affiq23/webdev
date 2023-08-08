@@ -26,13 +26,26 @@ const comments = [
     }
 ]
 
+// CRUD - this is the READ portion; we are READING ALL THE COMMENTS
 app.get("/comments", (req, res) => {
     res.render("comments/index", { comments }); //have to pass comments through in order to use it in the ejs file
+});
+
+// we need two routes: GET route is to give client the form; POST request sends the data to diff route where it is added to comments array
+app.get("/comments/new", (req, res) => {
+    res.render("comments/new");
+});
+
+app.post("/comments", (req, res) => {
+    const { username, comment } = req.body; //destructuring the object
+    comments.push({ username, comment }); //adds it to the array
+    res.send("It worked!");
 })
+
 
 app.get("/tacos", (req, res) => {
     res.send("GET /tacos");
-})
+});
 
 app.post("/tacos", (req, res) => {
     const { meat, qty } = req.body;
