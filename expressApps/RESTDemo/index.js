@@ -2,10 +2,12 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const { v4: uuid} = require("uuid");
+const methodOverride = require("method-override");
 uuid();
 
 app.use(express.urlencoded({ extended: true })); //parses incoming requests with URL encoded payloads
 app.use(express.json()); //parses incoming requests with JSON payloads
+app.use(methodOverride("_method"));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 

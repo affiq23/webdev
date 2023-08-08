@@ -6,7 +6,7 @@
     <title>Edit</title>
 </head>
 <body>
-    <form action="">
+    <form method="POST" action="/comments/<%= comment.id%>?_method=PATCH">
         <h1>Edit Comment</h1>
         <textarea name="comment" id="" cols="30" rows="5"><%= comment.comment %></textarea>
         <button>Submit</button>
