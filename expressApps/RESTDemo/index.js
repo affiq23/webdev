@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const { v4: uuid} = require("uuid");
-const methodOverride = require("method-override");
+const methodOverride  = require("method-override");
 uuid();
 
 app.use(express.urlencoded({ extended: true })); //parses incoming requests with URL encoded payloads
@@ -64,7 +64,7 @@ app.get("/comments/:id", (req, res) => {
 })
 
 app.get("/comments/:id/edit", (req, res) => {
-    const { id }  = req.params;
+    const { id }  = req.params; //this is destructuring the object
     const comment = comments.find(c => c.id === id);
     res.render("comments/edit", { comment });
 })
