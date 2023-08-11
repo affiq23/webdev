@@ -16,8 +16,11 @@
 const jokes = require("give-me-a-joke");
 const colors = require("colors");
 
-jokes.getRandomDadJoke(function (joke) {
-    console.log(joke.trap);
-    console.log("");
-    console.log(joke.rainbow);
-});
+// jokes.getRandomDadJoke(function (joke) {
+//     console.log(joke.trap.rainbow.inverse);
+//     console.log("");
+//     //console.log(joke.rainbow);
+// });
+
+let input = process.argv[2];
+console.log(input.trap.rainbow)
