@@ -18,17 +18,27 @@ mongoose.connect('mongodb://localhost:27017/shopApp') //uses a try catch
         },
         price: {
             type: Number,
-            required: true
+            required: true,
+            min: 0
         }, 
         onSale: {
             type: Boolean,
             default: false
-        }
+        },
+        categories: [String] //regular way to format
     })
 
     const Product = mongoose.model("Product", productSchema);
-    const bike = new Product({ name: "Bike Helmet", price: 600});
-    bike.save()
+    // const bike = new Product({ name: "Tire Pump", price: 12, categories: ["Cycling"]});
+    // bike.save()
+    //     .then(data => {
+    //     console.log("It worked!")
+    //     console.log(data)
+    // })
+    //     .catch(e => {
+    //     console.log(e)
+    // })
+Product.findOneAndUpdate({name: "Tire Pump"}, {price: 19.99}, { new: true, runValidators: true})
         .then(data => {
         console.log("It worked!")
         console.log(data)
@@ -36,3 +46,6 @@ mongoose.connect('mongodb://localhost:27017/shopApp') //uses a try catch
         .catch(e => {
         console.log(e)
     })
+
+// Validations are in place when you create something, but not when you update
+ 
