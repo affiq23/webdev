@@ -2,7 +2,7 @@
 
 const mongoose = require("mongoose");
 //don't need to add the objects set to true like he does in the video
-mongoose.connect('mongodb://127.0.0.1:27017/moviesApp') //uses a try catch
+mongoose.connect('mongodb://localhost:27017/movieApp') //uses a try catch
     .then(() => {
         console.log("Connection open");
     })
@@ -11,6 +11,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/moviesApp') //uses a try catch
         console.log(err);
     })
 
+    // schema is like a class; model is like a class
     const movieSchema = new mongoose.Schema({
         title: String,
         year: Number,
@@ -18,26 +19,24 @@ mongoose.connect('mongodb://127.0.0.1:27017/moviesApp') //uses a try catch
         rating: String
     });
 
-    const Movie = mongoose.model("Movie", movieSchema); //this is a model; creates a collection called movies; model name is Movie
-    // const amadeus = new Movie({ //creates an instance of Movie
-    //     title: "Amadeus",
-    //     year: 1982,
-    //     score: 9.2,
-    //     rating: "R"
+    //this is a model; creates a collection called movies; model name is Movie
+    const Movie = mongoose.model("Movie", movieSchema); 
+    // need to call save here
+    // const amadeus = new Movie({title: "Amadeus", year: 1986, score: 9.2, rating: "R"});
+    // amadeus.save();
+
+    // Movie.insertMany([
+    //     {title: "Star Wars", year: 1974, score: 9.9, rating: "PG-13"},
+    //     {title: "The Avengers", year: 2012, score: 8.7, rating: "PG-13"},
+    //     {title: "Jurassic Park", year: 1994, score: 9.5, rating: "PG-13"}, 
+    //     {title: "The X-Files", year: 1998, score: 9.0, rating: "PG-13"}
+    // ]).then(data => {
+    //     console.log("It worked")
+    //     console.log(data)
     // })
 
-    // Movie.insertMany([ //do not need to call save; only need to call save if you make a single instance
-    //     { title: "Amelie", year: 2001, score: 8.3, rating: "R"},
-    //     { title: "Alien", year: 1979, score: 8.1, rating: "R"},
-    //     { title: "The Iron Giant", year: 1999, score: 7.5, rating: "PG"},
-    //     { title: "Stand By Me", year: 1986, score: 8.6, rating: "R"}
-    // ])
-    // .then(data => {
-    //     console.log("It worked!");
-    //     console.log(data);
-    // })
-    // .catch(err => {
-    //     console.log("error: " + err);
-    // })
+    // to find in repl
+    //Movie.find({}).then(data => console.log(data))
 
-    //TO FIND: Movie.find({rating: "PG"}).then(data => console.log(data))
+
+
