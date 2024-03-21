@@ -11,7 +11,7 @@ app.use(methodOverride("_method")); //have to use in order to send DELETE and PA
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-
+// would be getting actual data here, but use array for now just for simplification
 let comments = [
     {
         id: uuid(),

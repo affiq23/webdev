@@ -3,13 +3,13 @@
 const mongoose = require("mongoose");
 //don't need to add the objects set to true like he does in the video
 mongoose.connect('mongodb://localhost:27017/movieApp') //uses a try catch
-    .then(() => {
-        console.log("Connection open");
-    })
-    .catch(err => {
-        console.log("error");
-        console.log(err);
-    })
+        .then(() => {
+            console.log("Connection open");
+        })
+        .catch(err => {
+            console.log("error");
+            console.log(err);
+        })
 
     // schema is like a class; model is like a class
     const movieSchema = new mongoose.Schema({
